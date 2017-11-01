@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>This is DViewers home page</title>
-</head>
-<body>
+{% extends 'fileViewer/base.html' %}
+{% load static %}
+
+{% block content %}
 
 <p>This is DViewers home page</p>
 
-</body>
-</html>
+<p><a href="{% url 'fileUpload' %}">Upload a document</a></p>
+
+{% endblock %}
