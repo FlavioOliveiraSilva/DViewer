@@ -5,12 +5,54 @@
 
 <p>Document overview</p>
 
-{% for i in documents_in_database %}
 
-<p>{{ i.idNumber}}</p>
-<p>{{ i.brand}}</p>
+<table id="document-overview">
+    <thead>
+        <tr>
+            <th>Document Number</th>
+            <th>Document Name</th>
+            <th>File</th>
+            <th>Brand</th>
+            <th>Document type</th>
+            <th>Norm Ref</th>
+            <th>Country</th>
+            <th>Language</th>
+            <th>Date uploaded</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in documents_in_database %}
+        <tr>
+            <td><a href="{{ i.documentFile.url }}">{{ i.idNumber}}</a></td>
+            <td>{{ i.documentName }}</td>
+            <td>{{ i.documentFile }}</td>
+            <td>{{ i.brand }}</td>
+            <td>{{ i.docType }}</td>
+            <td>{{ i.normRef }}</td>
+            <td>{{ i.country }}</td>
+            <td>{{ i.language }}</td>
+            <td>{{ i.uploaded_at }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
 
-{% endfor %}
+<p>another way to display the list of documents</p>
+
+    {% if documents_in_database %}
+        <ul>
+        {% for a in documents_in_database %}
+            <li><a href="{{ a.documentFile.url }}">{{ a.documentName}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No documents.</p>
+    {% endif %}
+
+
+<p><a href="{% url 'home' %}">Back to home</a></p>
+
+
 
 {% endblock %}
