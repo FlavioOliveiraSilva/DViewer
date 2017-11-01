@@ -8,7 +8,7 @@ class NormativeRef(models.Model):
     normDescription = models.CharField(max_length=40)
 
     def __unicode__(self):
-        return self.normCode
+        return unicode(self.normCode)
 
 
 class Language(models.Model):
@@ -16,7 +16,7 @@ class Language(models.Model):
     codeLanguage = models.CharField(max_length=2)
 
     def __unicode__(self):
-        return self.nameLanguage
+        return unicode(self.nameLanguage)
 
 
 class CountryDistributed(models.Model):
@@ -24,7 +24,7 @@ class CountryDistributed(models.Model):
     languageCountry = models.ForeignKey(Language)
 
     def __unicode__(self):
-        return self.nameCountry
+        return unicode(self.nameCountry)
 
 
 class Brand(models.Model):
@@ -32,20 +32,20 @@ class Brand(models.Model):
     brandName = models.CharField(max_length=40)
 
     def __unicode__(self):
-        return self.brandName
+        return unicode(self.brandName)
 
 
 class DocumentType(models.Model):
-    docType = models.CharField(max_length=255, blank=True)
+    docType = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return self.docType
+        return unicode(self.docType)
 
 
 class Document(models.Model):
     documentName = models.CharField(max_length=40)
-    document = models.FileField(upload_to='documents/')
-    idNumber = models.PositiveIntegerField()
+    documentFile = models.FileField(upload_to='documents/')
+    idNumber = models.IntegerField()
     uploaded_at = models.DateTimeField(auto_now_add=True)
     brand = models.ForeignKey(Brand)
     docType = models.ForeignKey(DocumentType)
@@ -54,5 +54,5 @@ class Document(models.Model):
     language = models.ForeignKey(Language)
 
     def __unicode__(self):
-        return self.idNumber
+        return unicode(self.documentName)
 

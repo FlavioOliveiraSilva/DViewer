@@ -14,6 +14,6 @@ class DocumentForm(forms.ModelForm):
             'normRef',
             'country',
             'language',
-            'document'
+            'documentFile'
                   )
 

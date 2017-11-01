@@ -5,4 +5,12 @@
 
 <p>Document overview</p>
 
+{% for i in documents_in_database %}
+
+<p>{{ i.idNumber}}</p>
+<p>{{ i.brand}}</p>
+
+
+{% endfor %}
+
 {% endblock %}

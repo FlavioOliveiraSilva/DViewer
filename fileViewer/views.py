@@ -1,11 +1,21 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import DocumentForm
+from .models import Document
 
 
 def home(request):
     return render(request, 'fileViewer/home.html')
+
+
+def document_overview(request):
+    documents_in_database = Document.objects.all()
+    return render(request, 'fileViewer/documentOverview.html', {'documents_in_database': documents_in_database})
+
+
+def show_document(request):
+    return render(request, 'fileViewer/documentDetail.html')
 
 
 def model_form_upload(request):
