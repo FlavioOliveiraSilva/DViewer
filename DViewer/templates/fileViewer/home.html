@@ -3,10 +3,11 @@
 
 {% block content %}
 
-<p style= "font-weight: bold">This is DViewers home page</p>
+<p style= "font-weight: bold">This is DViewer's home page</p>
 
-<p><a href="{% url 'fileUpload' %}">Upload a document</a></p>
-<p><a href="{% url 'document_overview' %}">See Documents</a></p>
 <p><a href="{% url 'search_document' %}">Search Documents</a></p>
+<p><a href="{% url 'document_overview' %}">See Documents</a></p>
+<p><a href="{% url 'fileUpload' %}">Upload a document</a></p>
+<p><a href="{% url 'brand_list' %}">See all brands</a></p>
 
 {% endblock %}

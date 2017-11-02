@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^fileUpload/$', views.model_form_upload, name='fileUpload'),
     url(r'^documentOverview/$', views.document_overview, name='document_overview'),
     url(r'^documentSearch/$', views.search_document, name='search_document'),
-    url(r'^BrandList/$', BrandList.as_view()),
+    url(r'^BrandList/$', BrandList.as_view(), name='brand_list'),
     url(r'^$', views.home, name='home'),
         ]
 

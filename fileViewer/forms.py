@@ -15,8 +15,9 @@ class DocumentForm(forms.ModelForm):
             'country',
             'language',
             'documentFile'
-                  )
+        )
 
 
-
+class SearchForm(forms.Form):
+    form_field_name = forms.CharField(label="Document name")
 

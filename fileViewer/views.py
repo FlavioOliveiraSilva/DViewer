@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
-from .forms import DocumentForm
+from .forms import DocumentForm, SearchForm
 from .models import Document,  Brand
 
 
@@ -33,10 +33,24 @@ def model_form_upload(request):
 
 
 def search_document(request):
-    search_result = Document.objects.filter(brand__contains='ECorp')
-    return render(request, 'fileViewer/documentSearch.html', {'search_result': search_result})
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            search_term = form.cleaned_data['form_field_name']
+            search_result = Document.objects.filter(documentName__icontains=search_term)
+
+            return render(request, 'fileViewer/documentSearch.html', {
+                'form': form, 'search_result': search_result
+            })
+    else:
+        form = SearchForm()
+
+    return render(request, 'fileViewer/documentSearch.html', {
+        'form': form,
+    })
 
 
 class BrandList(ListView):
     model = Brand
+    context_object_name = 'brand_list'
 
