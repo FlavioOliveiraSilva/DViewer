@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView
 from .forms import DocumentForm
-from .models import Document
+from .models import Document,  Brand
 
 
 def home(request):
@@ -29,3 +30,13 @@ def model_form_upload(request):
     return render(request, 'fileViewer/fileUpload.html', {
         'form': form
     })
+
+
+def search_document(request):
+    search_result = Document.objects.filter(brand__contains='ECorp')
+    return render(request, 'fileViewer/documentSearch.html', {'search_result': search_result})
+
+
+class BrandList(ListView):
+    model = Brand
+
