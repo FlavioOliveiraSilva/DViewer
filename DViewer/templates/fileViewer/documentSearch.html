@@ -14,7 +14,11 @@
     {% if search_result %}
         <ul>
         {% for i in search_result %}
+            <br>
             <li><a href="{{ i.documentFile.url }}">{{ i.documentName}}</a></li>
+
+            <iframe width="600 px" height="300 px" src="{{ i.documentFile.url }}"></iframe>
+            <br>
         {% endfor %}
         </ul>
     {% else %}

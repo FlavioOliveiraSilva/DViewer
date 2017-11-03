@@ -44,6 +44,7 @@
         <ul>
         {% for a in documents_in_database %}
             <li><a href="{{ a.documentFile.url }}">{{ a.documentName}}</a></li>
+
         {% endfor %}
         </ul>
     {% else %}
