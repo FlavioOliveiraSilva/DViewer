@@ -19,5 +19,5 @@ class DocumentForm(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
-    form_field_name = forms.CharField(label="Document name")
+    search_term_docName = forms.CharField(label="Document name")
 

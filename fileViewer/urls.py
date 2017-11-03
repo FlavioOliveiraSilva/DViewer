@@ -1,6 +1,6 @@
 
 from django.conf.urls import url
-from fileViewer.views import BrandList
+from fileViewer.views import BrandList, NormativeRefList
 from . import views
 
 
@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^documentOverview/$', views.document_overview, name='document_overview'),
     url(r'^documentSearch/$', views.search_document, name='search_document'),
     url(r'^BrandList/$', BrandList.as_view(), name='brand_list'),
+    url(r'^NormativeRef/$', NormativeRefList.as_view(), name='NormativeRef_list'),
     url(r'^$', views.home, name='home'),
         ]
 

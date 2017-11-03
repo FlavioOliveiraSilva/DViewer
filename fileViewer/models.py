@@ -42,6 +42,7 @@ class DocumentType(models.Model):
         return unicode(self.docType)
 
 
+
 class Document(models.Model):
     documentName = models.CharField(max_length=40)
     documentFile = models.FileField(upload_to='documents/')
