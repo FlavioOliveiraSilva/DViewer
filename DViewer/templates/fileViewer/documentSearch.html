@@ -12,7 +12,10 @@
     {{ form.as_table}}
     <button type="submit">Search</button>
 </form>
-
+<br>
+<br>
+<br>
+<br>
 <p>Results:</p>
     {% if search_result %}
         <ul>
@@ -28,6 +31,6 @@
         <p>No documents found</p>
     {% endif %}
 
-<p><a href="{% url 'home' %}">Return to home</a></p>
+<p><a class="button_bottom" href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}
 

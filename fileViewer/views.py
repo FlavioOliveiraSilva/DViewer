@@ -10,6 +10,10 @@ def home(request):
     return render(request, 'fileViewer/home.html')
 
 
+def about(request):
+    return render(request, 'fileViewer/about.html')
+
+
 def document_overview(request):
     documents_in_database = Document.objects.all()
     return render(request, 'fileViewer/documentOverview.html', {'documents_in_database': documents_in_database})

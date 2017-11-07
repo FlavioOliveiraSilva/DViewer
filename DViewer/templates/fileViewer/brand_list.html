@@ -5,8 +5,8 @@
 <div class="header_title">
     <p>List of Brands</p>
 </div>
- <h2>Brands</h2>
-<table id="list-brands">
+
+<table class="list_brands" id="list-brands">
     <thead>
         <tr>
             <td>Name</td>
@@ -22,7 +22,9 @@
         {% endfor %}
         </tbody>
 </table>
-
-<p><a href="{% url 'home' %}">Back to home</a></p>
+<br>
+<br>
+<br>
+<p><a class="button_bottom" href="{% url 'home' %}">Back to home</a></p>
 
 {% endblock %}
