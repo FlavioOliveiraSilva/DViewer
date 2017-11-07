@@ -2,8 +2,9 @@
 {% load static %}
 
 {% block content %}
-
-<p style= "font-weight: bold">This is DViewer's home page</p>
+<div class="header_title">
+    <p>DViewer - Home</p>
+</div>
 
 <p><a href="{% url 'search_document' %}">Search Documents</a></p>
 <p><a href="{% url 'document_overview' %}">See all documents (to remove)</a></p>

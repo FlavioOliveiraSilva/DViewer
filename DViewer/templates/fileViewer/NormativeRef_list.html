@@ -3,24 +3,23 @@
 
 {% block content %}
 <div class="header_title">
-    <p>List of Brands</p>
+    <p>list of Norm Ref </p>
 </div>
- <h2>Brands</h2>
+<h2>NormativeRef</h2>
+
 <table id="list-brands">
     <thead>
         <tr>
             <td>Name</td>
-            <td>Code</td>
         </tr>
     </thead>
-        <tbody>
-        {% for brand in brand_list %}
-            <tr>
-                <td>{{brand.brandName}}</td>
-                <td>{{ brand.brandCode}}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
+    <tbody>
+    {% for NormativeRef in NormativeRef_list %}
+        <tr>
+            <td>{{NormativeRef.normCode}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
 </table>
 
 <p><a href="{% url 'home' %}">Back to home</a></p>
