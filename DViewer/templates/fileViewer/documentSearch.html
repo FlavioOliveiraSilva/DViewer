@@ -5,19 +5,23 @@
 <div class="header_title">
     <p>Advanced Search</p>
 </div>
-<p>Choose search parameter to find documents:</p>
+<div class="form_search_document">
+    <p>Choose search parameter to find documents:</p>
+    <form method="POST" id="form_search_document_Name">
+        {% csrf_token %}
+        {{ form.as_table}}
+        <button type="submit">Search</button>
+    </form>
+</div>
 
-<form method="POST" id="form_search_document_Name">
-    {% csrf_token %}
-    {{ form.as_table}}
-    <button type="submit">Search</button>
-</form>
 <br>
 <br>
 <br>
 <br>
-<p>Results:</p>
-    {% if search_result %}
+<div class="results_search_content">
+    <div class="label_result">Results:</div>
+    <div class="search_results">
+      {% if search_result %}
         <ul>
         {% for i in search_result %}
             <br>
@@ -27,9 +31,13 @@
             <br>
         {% endfor %}
         </ul>
-    {% else %}
+        {% else %}
         <p>No documents found</p>
-    {% endif %}
+        {% endif %}
+    </div>
+
+</div>
+
 
 <p><a class="button_bottom" href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}

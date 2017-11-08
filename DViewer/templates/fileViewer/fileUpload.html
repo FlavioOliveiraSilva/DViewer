@@ -9,11 +9,19 @@
 <div class="form_file_upload">
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
+    <table class="table_form_file_upload">
+      <tr>
+        <td>{{form.as_table}}</td>
+      </tr>
+    </table>
+    <br>
     <button type="submit">Upload Document</button>
   </form>
 </div>
-
-  <p><a class="button_bottom" href="{% url 'home' %}">Return to home</a></p>
+<br>
+<br>
+<br>
+<br>
+<p><a class="button_bottom" href="{% url 'home' %}">Return to home</a></p>
 
 {% endblock %}
