@@ -9,11 +9,10 @@
     <p>Choose search parameter to find documents:</p>
     <form method="POST" id="form_search_document_Name">
         {% csrf_token %}
-        {{ form.as_table}}
+        {{ form.as_p}}
         <button type="submit">Search</button>
     </form>
 </div>
-
 <br>
 <br>
 <br>
@@ -26,7 +25,6 @@
         {% for i in search_result %}
             <br>
             <li><a href="{{ i.documentFile.url }}">{{ i.documentName}}</a></li>
-
             <iframe width="600 px" height="300 px" src="{{ i.documentFile.url }}"></iframe>
             <br>
         {% endfor %}
@@ -35,10 +33,7 @@
         <p>No documents found</p>
         {% endif %}
     </div>
-
 </div>
-
-
 <p><a class="button_bottom" href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}
 

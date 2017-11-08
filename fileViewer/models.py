@@ -2,6 +2,8 @@
 from __future__ import unicode_literals
 from django.db import models
 
+from django.conf.global_settings import LANGUAGES
+
 
 class NormativeRef(models.Model):
     normCode = models.CharField(max_length=20)
@@ -11,20 +13,21 @@ class NormativeRef(models.Model):
         return unicode(self.normCode)
 
 
-class Language(models.Model):
-    nameLanguage = models.CharField(max_length=20)
-    codeLanguage = models.CharField(max_length=2)
+#class Language(models.Model):
+    #nameLanguage = models.CharField(max_length=20)
+    #codeLanguage = models.CharField(max_length=2)
 
-    def __unicode__(self):
-        return unicode(self.nameLanguage)
+    #def __unicode__(self):
+        #return unicode(self.nameLanguage)
 
 
 class CountryDistributed(models.Model):
     nameCountry = models.CharField(max_length=40)
-    languageCountry = models.ForeignKey(Language)
+    #languageCountry = models.ForeignKey(Language)
+    languageCountry = models.CharField(max_length=7, choices=LANGUAGES)
 
     def __unicode__(self):
-        return unicode(self.nameCountry)
+        return "{} - {}".format(self.nameCountry, self.languageCountry)
 
 
 class Brand(models.Model):
@@ -42,7 +45,6 @@ class DocumentType(models.Model):
         return unicode(self.docType)
 
 
-
 class Document(models.Model):
     documentName = models.CharField(max_length=40)
     documentFile = models.FileField(upload_to='documents/')
@@ -52,7 +54,7 @@ class Document(models.Model):
     docType = models.ForeignKey(DocumentType)
     normRef = models.ForeignKey(NormativeRef)
     country = models.ForeignKey(CountryDistributed)
-    language = models.ForeignKey(Language)
+    #language = models.ForeignKey(Language)
 
     def __unicode__(self):
         return unicode(self.documentName)

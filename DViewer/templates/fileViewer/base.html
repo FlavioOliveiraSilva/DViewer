@@ -9,8 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <title>DViewer home page</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
     <style>
         /* Add a black background color to the top navigation */
@@ -49,12 +49,12 @@
         }
 
         .header_title {
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
             font-size: 20px;
             font-weight: bold;
         }
         .button_bottom {
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
             background-color: #1E90FF;
             border: none;
             color: white;
@@ -66,7 +66,7 @@
         }
 
         .button_action_upload{
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
             background-color: #B0C4DE;
             border: none;
             color: white;
@@ -78,7 +78,7 @@
         }
 
         #list-brands {
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
             border-collapse: collapse;
             width: 10%;
         }
@@ -105,11 +105,11 @@
         }
 
         .form_file_upload {
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
         }
 
         .results_search_content {
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
         }
 
         .label_result {
@@ -117,7 +117,7 @@
         }
 
         .form_search_document {
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
         }
 
         .table_form_file_upload {
@@ -126,7 +126,7 @@
         }
 
         .about_content p {
-            font-family: "Arial", Monospace ;
+            font-family: "Arial", Monospace;
             font-size: 12px;
         }
 
@@ -141,6 +141,7 @@
     <a href="{% url 'search_document' %}">Advanced Search</a>
     <a href="{% url 'brand_list' %}">All brands</a>
     <a href="{% url 'NormativeRef_list' %}">All NormRef</a>
+    <a href="{% url 'dashboard' %}">Dashboard</a>
     <a href="{% url 'about' %}">About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>

@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^documentSearch/$', views.search_document, name='search_document'),
     url(r'^BrandList/$', BrandList.as_view(), name='brand_list'),
     url(r'^NormativeRef/$', NormativeRefList.as_view(), name='NormativeRef_list'),
+    url(r'^dashboard/$', views.dashboard, name='dashboard'),
     url(r'^$', views.home, name='home'),
         ]
 
