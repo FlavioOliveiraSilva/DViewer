@@ -2,36 +2,19 @@
 {% load static %}
 {% block content %}
 
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['language', 'documents'],
-          ['nl', {{ query_nl_documents.count }}],
-          ['fr', {{ query_fr_documents.count }}],
-        ]);
-
-        var options = {
-          title: 'Documents per country',
-          pieHole: 0.5,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
 
 <div class="header_title">
     <p>Dashboard</p>
 </div>
 
-<div id="donutchart" style="width: 900px; height: 500px;"></div>
+<div class="Dashboard_graph_content">
+    <table>
+        <tr>
+            <td><div id="donutchart" ></div></td>
+            <td><div id="barchartdoc" ></div></td>
+        </tr>
+    </table>
+</div>
 
 <div class="results_search_content">
     <div class="label_result">Results:</div>
@@ -39,9 +22,8 @@
         <p>nl documents: {{ query_nl_documents.count }}</p>
         <p>fr documents:{{ query_fr_documents.count }}</p>
         <p>total: {{ total }}</p>
-
     </div>
 </div>
 <p><a class="button_bottom" href="{% url 'home' %}">Return to home</a></p>
 
-    <!--{% endblock %}-->
+{% endblock %}

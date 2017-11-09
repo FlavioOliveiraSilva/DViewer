@@ -1,3 +1,149 @@
-   p {
-    font: italic bold 12px/30px Georgia, serif;
+        /* Add a black background color to the top navigation */
+        .topnav {
+            background-color: #1E90FF;
+            overflow: hidden;
+            font-family: "Arial", Monospace ;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #00BFFF;
+            color: black;
+        }
+
+        /* Add an active class to highlight the current page */
+        .active {
+            background-color: #00BFFF;
+            color: white;
+        }
+
+        /* Hide the link that should open and close the topnav on small screens */
+        .topnav .icon {
+            display: none;
+        }
+
+        .header_title {
+            font-family: "Arial", Monospace;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .button_bottom {
+            font-family: "Arial", Monospace;
+            background-color: #1E90FF;
+            border: none;
+            color: white;
+            padding: 10px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .button_action_upload{
+            font-family: "Arial", Monospace;
+            background-color: #B0C4DE;
+            border: none;
+            color: white;
+            padding: 10px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+        }
+
+        #list-brands {
+            font-family: "Arial", Monospace;
+            border-collapse: collapse;
+            width: 10%;
+        }
+
+        #list-brands tr:hover {
+            background-color: #B0C4DE;
+        }
+
+        #list-brands tr:nth-child(even) {
+        background-color: #E6E6FA;
+        }
+
+        #list-brands td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #list-brands thead {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #696969;
+            color: white;
+        }
+
+        .form_file_upload {
+            font-family: "Arial", Monospace;
+        }
+
+        .results_search_content {
+            font-family: "Arial", Monospace;
+        }
+
+        .label_result {
+            font-weight: bold ;
+        }
+
+        .form_search_document {
+            font-family: "Arial", Monospace;
+        }
+
+        .table_form_file_upload {
+            text-align: left;
+            font-weight: normal;
+        }
+
+        .about_content p {
+            font-family: "Arial", Monospace;
+            font-size: 12px;
+        }
+
+        .button_home_menu {
+            font-family: "Arial", Monospace;
+            background-color: 	#6273b0;
+            border: none;
+            color: white;
+            padding: 20px 56px;
+            width: 200px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .button_home_menu_disabled {
+            font-family: "Arial", Monospace;
+            background-color: 	#6273b0;
+            border: none;
+            color: white;
+            padding: 20px 56px;
+            width: 200px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #table_home_content tr {
+            background-color:#6273b0
+            color: white;
         }

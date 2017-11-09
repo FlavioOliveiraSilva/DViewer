@@ -7,7 +7,7 @@ from .models import Document, NormativeRef, CountryDistributed, DocumentType, Br
 
 class DocumentAdmin (admin.ModelAdmin):
     #list_display = ('documentName', 'idNumber', 'brand', 'docType', 'normRef', 'country', 'language', 'documentFile')
-    list_display = ('documentName', 'idNumber', 'brand', 'docType', 'normRef', 'country', 'documentFile')
+    list_display = ('documentName', 'idNumber', 'brand', 'docType', 'normRef', 'country', 'documentFile', 'uploaded_at')
 
 
 class CountryAdmin(admin.ModelAdmin):
@@ -16,13 +16,6 @@ class CountryAdmin(admin.ModelAdmin):
 admin.site.register(Document, DocumentAdmin)
 admin.site.register(NormativeRef)
 admin.site.register(CountryDistributed, CountryAdmin)
-#admin.site.register(Language)
 admin.site.register(DocumentType)
 admin.site.register(Brand)
 
-
-
-#
-#    def get_list_display(self, request):
-#        self.user = request.user
-#        return super(DocumentAdmin, self).get_list_display(request)

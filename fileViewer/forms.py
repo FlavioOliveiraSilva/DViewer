@@ -13,7 +13,6 @@ class DocumentForm(forms.ModelForm):
             'docType',
             'normRef',
             'country',
-            #'language',
             'documentFile'
         )
 

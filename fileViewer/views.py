@@ -6,7 +6,6 @@ from .forms import DocumentForm, SearchForm
 from .models import Document,  Brand, NormativeRef
 
 
-
 def home(request):
     return render(request, 'fileViewer/home.html')
 

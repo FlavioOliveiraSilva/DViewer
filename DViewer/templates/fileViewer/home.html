@@ -6,10 +6,26 @@
     <p>DViewer - Home</p>
 </div>
 
-<p><a href="{% url 'search_document' %}">Search Documents</a></p>
-<p><a href="{% url 'document_overview' %}">See all documents (to remove)</a></p>
-<p><a href="{% url 'fileUpload' %}">Upload a document</a></p>
-<p><a href="{% url 'brand_list' %}">See all brands</a></p>
-<p><a href="{% url 'NormativeRef_list' %}">See all norms</a></p>
+<div class="text_content">
+    <br>
+    <br>
+</div>
+<div class="home_content">
+    <table class="table_home_content" id="table_home_content">
+        <tr>
+            <td><a class="button_home_menu" href="{% url 'search_document' %}">Search Documents</a></td>
+            <td><a class="button_home_menu" href="{% url 'document_overview' %}">See all documents (to remove)</a></td>
+            <td><a class="button_home_menu" href="{% url 'fileUpload' %}">Upload a document</a></td>
+        </tr>
+        <tr>
+            <td><a class="button_home_menu" href="{% url 'brand_list' %}">See all brands</a></td>
+            <td><a class="button_home_menu" href="{% url 'NormativeRef_list' %}">See all norms  </a></td>
+            <td><a class="button_home_menu_disabled" href="{% url 'NormativeRef_list' %}">Free</a></td>
+        </tr>
+    </table>
+
+
+
+</div>
 
 {% endblock %}
